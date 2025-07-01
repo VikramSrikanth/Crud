@@ -1,0 +1,36 @@
+﻿@model user
+
+<form asp-action="Update" method="post">
+
+    
+    <input asp-for="UserId" type="hidden" />
+    <input asp-for="RegistrationDate" type="hidden" value="@Model.RegistrationDate"/>
+    <div>
+        <label for="Name">Name</label>
+        <input asp-for="Name" type="text" value="@Model.Name"/>
+    </div>
+
+    <div>
+        <label for="Email">Email</label>
+        <input asp-for="Email" type="email" value="@Model.Email" />
+    </div>
+
+    <div>
+        <label for="Password">Password</label>
+        <input asp-for="Password" type="password" value="@Model.Password" />
+    </div>
+
+    <div>
+        <label for="RollType">Previously Assigned RollType</label>
+        <p>@Model.RollType</p>
+        
+        <input asp-for="RollType" type="radio" value="student" /><label for="RollType">student</label>
+        <input asp-for="RollType" type="radio" value="instructor" /><label for="RollType">instructor</label>
+       
+    </div>
+
+    <div>
+        <button type="submit">Update</button>
+    </div>
+
+</form>

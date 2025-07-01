@@ -1,0 +1,36 @@
+﻿@model List<Crud.Models.user>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table border="5" cellpadding="5px" cellspacing="5px">
+    <tr>
+    <th>UserId</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>RegDate</th>
+    <th>RollType</th>
+
+    </tr>
+    
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td>@item.UserId</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Password</td>
+                <td>@item.RegistrationDate</td>
+                <td>@item.RollType</td>
+                <td><a asp-action="Update" asp-route-id ="@item.UserId">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@item.UserId">Del</a></td>
+            </tr>
+        }
+
+  
+
+</table>
